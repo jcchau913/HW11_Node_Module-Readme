@@ -55,7 +55,6 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
-    // fs.writeFileSync(path.join (process.cwd(), fileName), generateMarkdown(data));
     fs.writeFileSync(path.join (process.cwd(), fileName), data);
 }
 
@@ -64,7 +63,6 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions)
     .then((inquirerResponses) => {
-      //  return fs.writeFileSync(path.join (process.cwd(), "README.md"), generateMarkdown(response));
       console.log("Generating Readme...");
       writeToFile("README.md", generateMarkdown({...inquirerResponses}));
       });    
